@@ -1,16 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgModule, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
+//  , imports: [MatInputModule]
 })
 export class AppComponent implements OnInit {
   public patientEmail: any;
   public firstName: any;
   public lastName: any;
   public queryParam: any;
+  public value: any = 'hi';
 
   constructor(private route: ActivatedRoute) {
 
@@ -20,6 +22,14 @@ export class AppComponent implements OnInit {
 })
 
 
+  }
+
+  getGreeting() {
+    if (this.patientEmail!="null") {
+      return "";
+    } else {
+      return "";
+    }
   }
 
   ngOnInit() {
@@ -33,6 +43,6 @@ export class AppComponent implements OnInit {
   }
 
   clickFunction() {
-    console.log('Hello there');
+    console.log('Hello there' + this.value );
   }
 }
