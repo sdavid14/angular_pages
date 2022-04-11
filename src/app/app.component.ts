@@ -8,12 +8,15 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AppComponent implements OnInit {
   public patientEmail: any;
+  public firstName: any;
+  public lastName: any;
   public queryParam: any;
 
   constructor(private route: ActivatedRoute) {
 
     this.queryParam = this.route.queryParamMap.subscribe(param => {
     this.patientEmail = param.get('patientEmail');
+    this.firstName = param.get('firstName');
 })
 
 
